@@ -177,15 +177,15 @@ label {
 #btnSalvar:hover {
     background-color: rgb(56, 116, 200);
     transform: scale(1.05);
-    box-shadow: 2px 2px 8px #639aff89;
+    box-shadow: 2px 2px 8px #39c7ff5a;
 }
 
 #btnLimpar {
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(113, 113, 113);
 }
 
 #btnLimpar:hover {
-    background-color: rgb(79, 78, 78);
+    background-color: rgb(105, 104, 104);
     transform: scale(1.05);
     box-shadow: 2px 2px 8px #2929294b;
 }
