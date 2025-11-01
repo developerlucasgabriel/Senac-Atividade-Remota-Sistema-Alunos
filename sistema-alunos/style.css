@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============================
+   Estilização Geral
+   ============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ============================
+   Container principal
+   ============================ */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+/* ============================
+   Conteúdo Principal
+   ============================ */
+main {
+    flex: 1;
+}
+
+/* ============================
+   Header
+   ============================ */
+header {
+    padding: 30px;
+    background-color: #105f41;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#logo {
+    color: white;
+    text-decoration: none;
+    margin-left: 110px;
+}
+
+/* --- Links de Navegação --- */
+ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+ul > li > a {
+    text-decoration: none;
+    color: white;
+    transition: 0.25s;
+}
+
+ul > li > a:hover {
+    text-decoration: underline;
+}
+
+/* --- Botão para sair do meu site --- */
+#btn-sair {
+    border: none;
+    padding: 12px 40px;
+    margin-right: 110px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #201f1f;
+    transition: 0.25s;
+    box-shadow: 2px 2px 12px #2b2b2b58;
+}
+
+#btn-sair:hover {
+    background-color: #101010;
+    transform: scale(1.05);
+}
+
+/* ============================
+   Formulário
+   ============================ */
+#formAluno {
+    display: flex;
+    flex-direction: column;
+    background-color: #efefefc5;
+    width: 70%;
+    margin: auto;
+    box-shadow: 2px 2px 12px rgba(123, 123, 123, 0.361);
+    border: 1px solid rgba(23, 22, 22, 0.378);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --- Titulo do formulário --- */
+#titulo-form {
+    margin-bottom: 20px;
+    background-color: #2654a9;
+    color: white;
+    padding: 20px 40px;
+    text-align: left;
+    font-size: 1.3em;
+}
+
+/* --- Linhas do formulário --- */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 40px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+/* --- Grupos do formulário --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    min-width: 250px;
+}
+
+fieldset.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-weight: 580;
+    border: none;
+}
+
+label {
+    font-weight: 580;
+    margin-bottom: 5px;
+}
+
+.form-group > input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ============================
+   Botões do Formulário
+   ============================ */
+#btn-form {
+    margin: 20px 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+#btnSalvar, #btnLimpar {
+    padding: 16px 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    transition: all 0.25s ease;
+}
+
+#btnSalvar {
+    background-color: rgb(43, 115, 216);
+}
+
+#btnSalvar:hover {
+    background-color: rgb(56, 116, 200);
+    transform: scale(1.05);
+    box-shadow: 2px 2px 8px #639aff89;
+}
+
+#btnLimpar {
+    background-color: rgb(100, 100, 100);
+}
+
+#btnLimpar:hover {
+    background-color: rgb(79, 78, 78);
+    transform: scale(1.05);
+    box-shadow: 2px 2px 8px #2929294b;
+}
+
+/* ============================
+   Footer
+   ============================ */
+footer {
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: #105F41;
+}
