@@ -126,6 +126,10 @@ ul > li > a:hover {
     min-width: 250px;
 }
 
+#dataNasc {
+    color: #757575;
+}
+
 fieldset.form-group {
     display: flex;
     flex-direction: row;
