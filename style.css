@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ============================
-   Estilização Geral
+   Reset CSS
    ============================ */
 * {
     margin: 0;
@@ -43,6 +43,7 @@ header {
     color: white;
     text-decoration: none;
     margin-left: 110px;
+    font-size: 2rem;
 }
 
 /* --- Links de Navegação --- */
@@ -57,6 +58,7 @@ ul > li > a {
     text-decoration: none;
     color: white;
     transition: 0.25s;
+    font-size: 1rem;
 }
 
 ul > li > a:hover {
@@ -66,16 +68,20 @@ ul > li > a:hover {
 /* --- Botão para sair do meu site --- */
 #btn-sair {
     border: none;
-    padding: 12px 40px;
+    padding: 10px 25px;
+    border-radius: 5px;
     margin-right: 110px;
-    font-size: 1em;
-    font-weight: 500;
     cursor: pointer;
-    color: #fff;
-    border-radius: 4px;
-    background-color: #201f1f;
+    background-color: #1f201f;
     transition: 0.25s;
-    box-shadow: 2px 2px 12px #2b2b2b58;
+}
+
+#btn-sair > a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 2px 2px 12px #1f1f1f9b;
 }
 
 #btn-sair:hover {
