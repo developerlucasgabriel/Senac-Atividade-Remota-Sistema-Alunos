@@ -96,19 +96,19 @@ ul > li > a:hover {
 #formAluno {
     display: flex;
     flex-direction: column;
-    background-color: #efefefc5;
-    width: 80%;
+    background-color: #efefee;
     margin: auto;
     box-shadow: 2px 2px 14px rgba(123, 123, 123, 0.213);
     border: 1px solid rgba(23, 22, 22, 0.378);
     border-radius: 8px;
     overflow: hidden;
+    max-width: 90%;
 }
 
 /* --- Titulo do formulário --- */
 #titulo-form {
     margin-bottom: 20px;
-    background-color: #0c246f;
+    background-color: #202022;
     color: white;
     padding: 20px 40px;
     text-align: left;
@@ -193,46 +193,70 @@ label {
 #btnLimpar:hover {
     background-color: rgb(105, 104, 104);
     transform: scale(1.05);
-    box-shadow: 2px 2px 8px #2929294b;
+    box-shadow: 2px 2px 12px #29292939;
 }
 
-th {
-    text-align: center;
-}
-
+/* Sessão da Lista dos Alunos */
 .table-section {
-    gap: 40px;
+    display: flex;
     flex-direction: column;
     margin: 60px auto;
-    width: 80%;
-    border: 1px solid rgba(23, 22, 22, 0.378);
+    max-width: 90%;
+    width: 100%;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 2px 2px 14px rgba(123, 123, 123, 0.213);
-    background-color: #efefefc5;
+    border: 1px solid rgba(23, 22, 22, 0.378);
 }
 
+/* Titulo da Lista */
 #list-title {
-    background-color: #0c246f;
-    color: #fff;
-    padding: 20px 40px;
-    font-size: 1.3rem;
+    padding: 20px;
+    background-color: #191818;
+    color: #ffff;
 }
 
+/* Tabela */
 table {
-    padding: 40px;
+    background-color: #ffff;
 }
 
+/* Colunas */
+th {
+    background-color: #105F41;
+    color: #ffff;
+    border: 2px solid #000;
+    padding: 5px;
+}
+
+/* Linhas */
 tr {
-    display: flex;
-    gap: 120px;
+    text-align: center;
+    margin: auto;
 }
 
+/* Dados das Tuplas */
+td {
+    border: 1px solid #000;
+    color: ;
+}
+
+/* Mensagem "Nenhum Aluno Cadastrado Ainda " */
+.no-data {
+    padding: 5px;
+    color: #2a2a2a;
+}
+
+/* Botão da Lista */
 .btn-list {
-    border-top: 1px solid rgba(23, 22, 22, 0.378);
-
+    margin-top: 20px;
+    background-color: #c3c0c03f;
+    border-top: 1px solid #38383859;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
+/* Botão para Apagar Alunos */
 #btn-apagar-alunos {
     padding: 16px 20px;
     cursor: pointer;
@@ -241,7 +265,7 @@ tr {
     color: white;
     transition: all 0.25s ease;
     cursor: pointer;
-    margin: 20px 40px;
+    margin: 20px 0px 20px 10px;
     background-color: rgb(193, 7, 7);
 }
 
@@ -252,15 +276,12 @@ tr {
 
 /* ============================
    Footer
-   ============================ */
+   ============================ 
+*/
 footer {
     margin-top: 100px;
     text-align: center;
     padding: 20px;
-    color: white;
+    color: #ffff;
     background-color: #105F41;
-}
-
-.no-data {
-    margin: 40px auto 40px;
 }

@@ -86,8 +86,7 @@ function renderizarTabela() {
                 <td colspan="5" class="no-data">Nenhum aluno cadastrado ainda.</td> 
             </tr>
         `;
-        tbody.style.color = 'red';
-        tbody.style.fontWeight = 'bold';
+        tbody.style.color = '#3d3d3dff';
         return;
     }
 
@@ -114,6 +113,34 @@ function renderizarTabela() {
     });
     console.log('Tabela renderizada com', todosAlunos.length, 'aluno(s)');
 }
+
+/**
+ * Limpa todos os campos do formulario
+ * 
+ */
+function limparFormulario() {
+    document.getElementById('alunoId').value = ''; 
+    document.getElementById('nome').value = '';        
+    document.getElementById('cpf').value = '';        
+    document.getElementById('rg').value = '';        
+    document.getElementById('numMatricula').value = '';        
+    document.getElementById('email').value = '';       
+    document.getElementById('dataNasc').value = '';        
+    document.querySelector('input[name="sexo"]:checked')?.value || '';        
+    document.getElementById('telefone').value = '';        
+    document.getElementById('responsavel').value = '';        
+    document.getElementById('telefoneResp').value = '';        
+    document.getElementById('endereco').value = '';        
+    document.getElementById('turma').value = '';        
+
+    // Reseta o estado de edicao
+    editando = false;
+    document.getElementById('btnSalvar').textContent = '✅ Salvar Aluno';
+    document.getElementById('btnLimpar').style.display = 'none';
+
+    console.log('Formulário limpo!');
+}
+
 
 // ===== 5. EVENTOS E INCIALIZAÇÃO =====
 
