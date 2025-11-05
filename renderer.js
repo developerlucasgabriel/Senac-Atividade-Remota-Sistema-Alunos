@@ -136,7 +136,6 @@ function limparFormulario() {
     // Reseta o estado de edicao
     editando = false;
     document.getElementById('btnSalvar').textContent = '✅ Salvar Aluno';
-    document.getElementById('btnLimpar').style.display = 'none';
 
     console.log('Formulário limpo!');
 }
@@ -219,6 +218,8 @@ window.addEventListener('DOMContentLoaded', function() {
     carregarDoStorage();
     //Renderiza a tabela inicial 
     renderizarTabela();
+    
+    document.getElementById('btnLimpar').addEventListener('click', limparFormulario);
 
     console.log('Sistema pronto para uso!');
 });
