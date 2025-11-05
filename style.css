@@ -67,22 +67,19 @@ ul > li > a:hover {
 }
 
 /* --- Botão para sair do meu site --- */
+#link-button {
+    margin-right: 110px;
+}
+
 #btn-sair {
     border: none;
     padding: 10px 25px;
     border-radius: 5px;
-    margin-right: 110px;
     cursor: pointer;
     background-color: #1f201f;
-    transition: 0.25s;
-}
-
-#btn-sair > a {
-    text-decoration: none;
     color: #fff;
     font-size: 1rem;
-    font-weight: 500;
-    box-shadow: 2px 2px 12px #1f1f1f9b;
+    transition: 0.25s;
 }
 
 #btn-sair:hover {
