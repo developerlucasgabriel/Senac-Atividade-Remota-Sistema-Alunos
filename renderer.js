@@ -118,6 +118,7 @@ function renderizarTabela() {
  * Limpa todos os campos do formulario
  * 
  */
+document.getElementById('btnLimpar').addEventListener('click', limparFormulario);
 function limparFormulario() {
     document.getElementById('alunoId').value = ''; 
     document.getElementById('nome').value = '';        
@@ -219,7 +220,6 @@ window.addEventListener('DOMContentLoaded', function() {
     //Renderiza a tabela inicial 
     renderizarTabela();
     
-    document.getElementById('btnLimpar').addEventListener('click', limparFormulario);
 
     console.log('Sistema pronto para uso!');
 });
