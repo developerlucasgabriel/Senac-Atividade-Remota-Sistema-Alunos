@@ -192,8 +192,9 @@ label {
     transform: scale(1.05);
     box-shadow: 2px 2px 12px #29292939;
 }
-
-/* Sessão da Lista dos Alunos */
+/* ============================
+   Lista de Alunos Cadastrados
+   ============================ */
 .table-section {
     display: flex;
     flex-direction: column;
