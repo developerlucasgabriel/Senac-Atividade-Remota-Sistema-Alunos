@@ -56,6 +56,42 @@ function adicionarAluno(aluno) {
 }
 
 /**
+ * UPDATE - Atualiza os dados de um aluno existente
+ * '@'param {number} id - ID do aluno a ser atualizado
+ * '@'param {Object} dadosAtualizados - Novos dados do aluno 
+*/
+function atualizarAluno(id, dadosAtualizados) {
+    // Encontra o índice do aluno array pelo ID
+    const index = alunos.findIndex((aluno) => aluno.id === id);
+
+    // Se encontrou o aluno
+    if (index !== -1) {
+        // Atualiza os dados mantendo ID original
+        alunos[index] = { ...dadosAtualizados, id: id }
+
+        // Salva no LocalStorage
+        salvarNoStorage();
+        
+        console.log('Aluno atualizado', alunos[index]);
+    }
+}
+
+/**
+ * DELETE - Remove um aluno do sistema
+ * '@'param {number} id - ID do aluno a ser removido
+*/
+function excluirAluno(id) {
+    // Filtra o array removendo o aluno com o ID especificado
+    alunos = alunos.filter(aluno => aluno.id !== id);
+
+    // Salva no LocalStorage
+    salvarNoStorage();
+
+    console.log('Aluno excluído. ID:', id);
+
+}
+
+/**
  * READ - Retorna todos os alunos cadastrados
  * '@'returns {Arrays} Array com todos os alunos
 */
@@ -107,6 +143,10 @@ function renderizarTabela() {
             <td>${aluno.telefoneResp}</td> 
             <td>${aluno.endereco}</td> 
             <td>${aluno.turma}</td> 
+            <td>
+                <button onclick="editarAluno(${aluno.id})">✏️ Editar</button>
+                <button onclick="confirmarExclusao(${aluno.id})">🗑️ Excluir</button>
+            </td>
         `;
 
         tbody.appendChild(tr);
@@ -118,7 +158,6 @@ function renderizarTabela() {
  * Limpa todos os campos do formulario
  * 
  */
-document.getElementById('btnLimpar').addEventListener('click', limparFormulario);
 function limparFormulario() {
     document.getElementById('alunoId').value = ''; 
     document.getElementById('nome').value = '';        
@@ -140,6 +179,75 @@ function limparFormulario() {
 
     console.log('Formulário limpo!');
 }
+
+/**
+ * Preenche o formulário com os dados de um aluno para edição
+ * '@'param {number} id - ID do aluno a ser editado
+ */
+function editarAluno(id) {
+    // Busca o aluno pelo ID
+    const aluno = alunos.find(a => a.id === id);
+
+    if (aluno) {
+        // Preenche os campos do formulário
+        document.getElementById('alunoId').value = aluno.id; 
+        document.getElementById('nome').value = aluno.nome;        
+        document.getElementById('cpf').value = aluno.cpf;        
+        document.getElementById('rg').value = aluno.rg;        
+        document.getElementById('numMatricula').value = aluno.numMatricula;        
+        document.getElementById('email').value = aluno.email;       
+        document.getElementById('dataNasc').value = aluno.dataNasc;        
+        document.querySelector(`input[name="sexo"][value="${aluno.sexo}"]`).checked = true;  
+        document.getElementById('telefone').value = aluno.telefone;        
+        document.getElementById('responsavel').value = aluno.responsavel;        
+        document.getElementById('telefoneResp').value = aluno.telefoneResp;        
+        document.getElementById('endereco').value = aluno.endereco;        
+        document.getElementById('turma').value = aluno.turma;   
+
+        // Muda o estado para edição
+        editando = true;
+       document.getElementById('btnSalvar').textContent = '🔄 Atualizar Aluno';
+    document.getElementById('btnLimpar').style.display = 'inline-block';
+
+        // Rola a página para o topo (formulário)
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        console.log('Editando aluno:', aluno);
+    }
+}
+
+/**
+ * Confirma a exclusão de um aluno
+ * '@'param {number} id - ID do Aluno a ser excluído
+ */
+function confirmarExclusao(id) {
+    // Busca o aluno para mostrar o nome na confirmação
+    const aluno = alunos.find(a => a.id === id);
+
+    if (aluno) {
+        // Mostra caixa de confirmação
+        const confirmacao = confirm(
+            `Tem certeza que deseja excluir o aluno:\n\n${aluno.nome}?\n\nEsta ação não pode ser desfeita!`
+        );
+
+        // Se confirmou, exclui o aluno
+        if (confirmacao) {
+            excluirAluno(id);
+            renderizarTabela();
+            alert('Aluno excluído com sucesso!');
+        }
+    }
+}
+
+/**
+ * Evento do botão Cancelar
+ * Cancela a edição e limpa o formulário
+ */
+document.getElementById('btnLimpar').addEventListener('click', function() {
+    if (confirm('Deseja cancelar a edição?')) {
+        limparFormulario();
+    }
+});
 
 
 // ===== 5. EVENTOS E INCIALIZAÇÃO =====
