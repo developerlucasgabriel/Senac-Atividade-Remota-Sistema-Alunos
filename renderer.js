@@ -109,6 +109,9 @@ function renderizarTabela() {
     // Pega a referência do elemento tbody da tabela
     const tbody = document.getElementById('tabelaAlunos');
 
+    // 
+    const frase = document.getElementsByName('frase');
+
     // Limpa o conteúdo atual da tabela
     tbody.innerHTML = '';
 
@@ -122,7 +125,7 @@ function renderizarTabela() {
                 <td colspan="5" class="no-data">Nenhum aluno cadastrado ainda.</td> 
             </tr>
         `;
-        tbody.style.color = '#3d3d3dff';
+               
         return;
     }
 
@@ -144,8 +147,8 @@ function renderizarTabela() {
             <td>${aluno.endereco}</td> 
             <td>${aluno.turma}</td> 
             <td>
-                <button onclick="editarAluno(${aluno.id})">✏️ Editar</button>
-                <button onclick="confirmarExclusao(${aluno.id})">🗑️ Excluir</button>
+                <button class="btn-editar" onclick="editarAluno(${aluno.id})">✏️ Editar</button>
+                <button class="btn-excluir" onclick="confirmarExclusao(${aluno.id})">🗑️ Excluir</button>
             </td>
         `;
 
