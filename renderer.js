@@ -237,7 +237,7 @@ function confirmarExclusao(id) {
         if (confirmacao) {
             excluirAluno(id);
             renderizarTabela();
-            alert('Aluno excluído com sucesso!');
+            alert(`Aluno ${nome} excluído com sucesso!`);
         }
     }
 }
